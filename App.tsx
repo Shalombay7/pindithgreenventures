@@ -1,10 +1,11 @@
-import { Hero } from './components/Hero';
+import { Hero } from './Hero';
+import { Products } from './Products';
 
 function App() {
   return (
     <main>
       <Hero />
-      {/* You can add other sections like "Our Story", "Products", "Contact" here */}
+      <Products />
     </main>
   );
 }
