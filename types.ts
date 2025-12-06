@@ -1,7 +1,9 @@
+export const PRODUCT_CATEGORIES = ['Rabbit', 'Poultry', 'Other'] as const;
+
 export interface Product {
   id: string;
   name: string;
-  category: 'Rabbit' | 'Poultry' | 'Other';
+  category: typeof PRODUCT_CATEGORIES[number];
   price: number;
   description: string;
   image: string;
