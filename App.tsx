@@ -9,10 +9,12 @@ import { ShareWidget } from './components/ShareWidget';
 import { Toast } from './components/Toast';
 import { ShoppingBag, Phone, Rabbit, Wheat } from 'lucide-react';
 
+const CATEGORIES = ['All', 'Rabbit', 'Poultry'] as const;
+
 const App: React.FC = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [categoryFilter, setCategoryFilter] = useState<'All' | 'Rabbit' | 'Poultry'>('All');
+  const [categoryFilter, setCategoryFilter] = useState<typeof CATEGORIES[number]>('All');
   
   // Notification states
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -131,10 +133,10 @@ const App: React.FC = () => {
       <section className="py-10 bg-white sticky top-16 z-30 shadow-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
            <div className="flex justify-center gap-3">
-             {['All', 'Rabbit', 'Poultry'].map((cat) => (
+             {CATEGORIES.map((cat) => (
                <button
                 key={cat}
-                onClick={() => setCategoryFilter(cat as any)}
+                onClick={() => setCategoryFilter(cat)}
                 className={`
                   px-6 py-2 rounded-full font-medium transition-all text-sm sm:text-base
                   ${categoryFilter === cat 
