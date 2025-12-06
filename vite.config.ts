@@ -10,7 +10,8 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     define: {
       // If you are using a library that requires process.env.API_KEY, this is the way to do it.
-      'process.env.API_KEY': JSON.stringify(env.API_KEY)
+      // This makes the key available to the client-side code.
+      'process.env.API_KEY': JSON.stringify(env.API_KEY || process.env.API_KEY)
     }
   };
 });
