@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function Hero() {
   return (
     <section className="relative bg-hero-pattern bg-cover bg-center bg-no-repeat">
