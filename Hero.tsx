@@ -19,8 +19,11 @@ export function Hero() {
 
           <div className="mt-8 flex flex-wrap gap-4 text-center">
             <a href="#products" className="block w-full rounded bg-pindith-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-pindith-700 focus:outline-none focus:ring active:bg-pindith-500 sm:w-auto">
-              Our Products
+              Browse Our Products
             </a>
+            <p className="w-full text-xs text-white/70 sm:w-auto sm:pt-3">
+              Checkout happens securely on WhatsApp.
+            </p>
           </div>
         </div>
       </div>
