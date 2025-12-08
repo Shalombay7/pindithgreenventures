@@ -1,0 +1,18 @@
+[
+  {
+    "id": "rabbit-nz-white",
+    "name": "New Zealand White Rabbit",
+    "category": "Rabbits",
+    "price": 25.00,
+    "description": "A popular breed known for its excellent meat quality and fast growth rate. Ideal for small-scale farming.",
+    "imageUrl": "/images/rabbits/new-zealand-white.jpg"
+  },
+  {
+    "id": "poultry-r-i-red",
+    "name": "Rhode Island Red Hen",
+    "category": "Poultry",
+    "price": 15.00,
+    "description": "A versatile, dual-purpose breed valued for both its egg-laying capabilities and meat. Hardy and reliable.",
+    "imageUrl": "/images/poultry/rhode-island-red.jpg"
+  }
+]
