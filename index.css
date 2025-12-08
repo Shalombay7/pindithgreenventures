@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer base {
   a {
     @apply text-pindith-700 hover:text-pindith-600 transition-colors;
   }

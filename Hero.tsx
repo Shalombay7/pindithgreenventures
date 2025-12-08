@@ -8,7 +8,7 @@ export function Hero() {
         <div className="max-w-xl text-center sm:text-left">
           <h1 className="text-3xl font-extrabold text-white sm:text-5xl">
             Welcome to
-            <strong className="block font-extrabold text-pindith-500">
+            <strong className="sm:block font-extrabold text-pindith-500">
               PinDith Green Ventures.
             </strong>
           </h1>

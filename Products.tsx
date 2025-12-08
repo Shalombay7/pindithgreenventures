@@ -1,4 +1,5 @@
-const products = [
+import { ProductCard } from './ProductCard';
+ const products = [
   {
     name: 'Premium Rabbits',
     description: 'Healthy, well-cared-for rabbits, perfect for breeding or as a source of lean protein.',
@@ -24,20 +25,9 @@ export function Products() {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {products.map((product) => (
-            <a href="#" key={product.name} className="group block overflow-hidden rounded-lg border border-gray-200 shadow-sm transition hover:shadow-lg">
-              <img
-                src={product.imageUrl}
-                alt={`Image of ${product.name}`}
-                className="h-56 w-full object-cover"
-              />
-              <div className="p-6 bg-white">
-                <h3 className="text-xl font-bold text-earth-800">{product.name}</h3>
-                <p className="mt-2 text-sm text-gray-500">{product.description}</p>
-                <p className="mt-4 text-lg font-semibold text-pindith-700">{product.price}</p>
-              </div>
-            </a>
+            <ProductCard key={product.name} {...product} />
           ))}
         </div>
       </div>
