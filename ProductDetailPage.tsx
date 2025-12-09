@@ -1,11 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
-import { products } from './data';
+import productsData from './products.json';
 import { useCart } from './CartContext';
 
 export function ProductDetailPage() {
   const { productId } = useParams();
   const { addToCart } = useCart();
-  const product = products.find(p => p.id === productId);
+  const product = productsData.find(p => p.id === productId);
 
   if (!product) {
     return (
@@ -21,8 +21,8 @@ export function ProductDetailPage() {
   const { name, description, imageUrl, price } = product;
 
   const handleDirectWhatsAppOrder = () => {
-    const priceAsNumber = parseFloat(price.replace('GHS ', ''));
-    let message = `*Direct Order from PinDith Green Ventures*\n\n`;
+    const priceAsNumber = typeof price === 'string' ? parseFloat(price.replace('GHS ', '')) : price;
+    let message = `*Direct Order from PinDith Green Ventures*\n\n`; // prettier-ignore
     message += `I'm interested in ordering the following item:\n\n`;
     message += `- ${name} - ${price}\n\n`;
     message += `Please let me know the next steps.`;
@@ -32,7 +32,7 @@ export function ProductDetailPage() {
   };
 
   const handleAddToCart = () => {
-    const priceAsNumber = parseFloat(price.replace('GHS ', ''));
+    const priceAsNumber = typeof price === 'string' ? parseFloat(price.replace('GHS ', '')) : price;
     addToCart({ name, price: priceAsNumber, imageUrl });
   };
 
@@ -41,8 +41,7 @@ export function ProductDetailPage() {
       <div className="grid md:grid-cols-2 gap-8">
         <img src={imageUrl} alt={name} className="w-full h-auto object-cover rounded-lg shadow-lg" />
         <div>
-          <h1 className="text-3xl font-bold text-earth-800">{name}</h1>
-          <p className="text-2xl font-semibold text-pindith-700 mt-2">{price}</p>
+          <h1 className="text-3xl font-bold text-earth-800">{name}</h1>          <p className="text-2xl font-semibold text-pindith-700 mt-2">GHS {price.toFixed(2)}</p>
           <p className="mt-4 text-gray-600">{description}</p>
           <div className="mt-8 flex flex-col gap-4">
             <button
