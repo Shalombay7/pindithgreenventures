@@ -9,9 +9,6 @@ export default {
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'sans-serif'],
       },
-      backgroundImage: {
-        'hero-pattern': "url('/hero-background.jpg')",
-      },
       colors: {
         pindith: {
           50: '#f0fdf4',
