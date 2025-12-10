@@ -21,7 +21,7 @@ export function ProductDetailPage() {
     );
   }
 
-  const { name, description, price, image, available, category } = product;
+  const { name, description, price, image, available, category, clip } = product;
 
   // Find related products from the same category, excluding the current one.
   const relatedProducts = (productsData as Product[])
@@ -56,6 +56,17 @@ export function ProductDetailPage() {
             <p className="mt-2 text-2xl font-semibold text-red-600">Currently Out of Stock</p>
           )}
           <p className="mt-4 text-gray-600">{description}</p>
+
+          {clip && (
+            <div className="mt-6">
+              <h3 className="text-lg font-semibold text-earth-700 mb-2">Watch a Short Clip</h3>
+              <video controls className="w-full rounded-lg shadow-md" aria-label={`Video of ${name}`}>
+                <source src={clip} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          )}
+
           <div className="mt-8 flex flex-col gap-4">
             <button
               onClick={handleAddToCart}

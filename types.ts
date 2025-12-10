@@ -7,6 +7,7 @@ export interface Product {
   price: number;
   description: string;
   image: string;
+  clip?: string; // Optional property for a video clip URL
   available: boolean;
 }
 

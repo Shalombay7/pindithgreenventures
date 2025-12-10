@@ -6,6 +6,7 @@
     "price": 25.00,
     "description": "A popular breed known for its excellent meat quality and fast growth rate. Ideal for small-scale farming.",
     "image": "/images/rabbits/new-zealand-white.jpg",
+    "clip": "/clips/rabbit-video.mp4",
     "available": true
   },
   {
