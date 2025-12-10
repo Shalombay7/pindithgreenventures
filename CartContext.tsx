@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode, useMemo } from 'react';
+import React, { createContext, useContext, ReactNode, useMemo, useReducer } from 'react';
 
 type CartItem = {
   name: string;
@@ -7,11 +7,18 @@ type CartItem = {
   quantity: number;
 };
 
+type CartAction =
+  | { type: 'ADD_ITEM'; payload: Omit<CartItem, 'quantity'> }
+  | { type: 'UPDATE_QUANTITY'; payload: { productName: string; quantity: number } }
+  | { type: 'REMOVE_ITEM'; payload: { productName: string } }
+  | { type: 'CLEAR_CART' };
+
 type CartContextType = {
   cartItems: CartItem[];
-  addToCart: (product: Omit<CartItem, 'quantity'>) => void;
-  updateQuantity: (productName: string, quantity: number) => void;
-  removeFromCart: (productName: string) => void;
+  // Dispatch is not exposed directly, but through semantic functions
+  addToCart: (product: Omit<CartItem, 'quantity'>) => void; // Keep the public API the same
+  updateQuantity: (productName: string, quantity: number) => void; // Keep the public API the same
+  removeFromCart: (productName: string) => void; // Keep the public API the same
   clearCart: () => void;
   itemCount: number;
   totalPrice: number;
@@ -27,38 +34,52 @@ export function useCart() {
   return context;
 }
 
-export function CartProvider({ children }: { children: ReactNode }) {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
-
-  const addToCart = (product: Omit<CartItem, 'quantity'>) => {
-    setCartItems((prevItems) => {
-      const existingItem = prevItems.find((item) => item.name === product.name);
+function cartReducer(state: CartItem[], action: CartAction): CartItem[] {
+  switch (action.type) {
+    case 'ADD_ITEM': {
+      const existingItem = state.find((item) => item.name === action.payload.name);
       if (existingItem) {
-        return prevItems.map((item) =>
-          item.name === product.name ? { ...item, quantity: item.quantity + 1 } : item
+        return state.map((item) =>
+          item.name === action.payload.name ? { ...item, quantity: item.quantity + 1 } : item
         );
       }
-      return [...prevItems, { ...product, quantity: 1 }];
-    });
+      return [...state, { ...action.payload, quantity: 1 }];
+    }
+    case 'UPDATE_QUANTITY': {
+      if (action.payload.quantity <= 0) {
+        return state.filter((item) => item.name !== action.payload.productName);
+      }
+      return state.map((item) =>
+        item.name === action.payload.productName ? { ...item, quantity: action.payload.quantity } : item
+      );
+    }
+    case 'REMOVE_ITEM': {
+      return state.filter((item) => item.name !== action.payload.productName);
+    }
+    case 'CLEAR_CART': {
+      return [];
+    }
+    default:
+      return state;
+  }
+}
+
+export function CartProvider({ children }: { children: ReactNode }) {
+  const [cartItems, dispatch] = useReducer(cartReducer, []);
+
+  const addToCart = (product: Omit<CartItem, 'quantity'>) => {
+    dispatch({ type: 'ADD_ITEM', payload: product });
   };
 
   const updateQuantity = (productName: string, quantity: number) => {
-    if (quantity <= 0) {
-      removeFromCart(productName);
-    } else {
-      setCartItems((prevItems) =>
-        prevItems.map((item) =>
-          item.name === productName ? { ...item, quantity } : item
-        )
-      );
-    }
+    dispatch({ type: 'UPDATE_QUANTITY', payload: { productName, quantity } });
   };
 
   const removeFromCart = (productName: string) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.name !== productName));
+    dispatch({ type: 'REMOVE_ITEM', payload: { productName } });
   };
 
-  const clearCart = () => setCartItems([]);
+  const clearCart = () => dispatch({ type: 'CLEAR_CART' });
 
   const itemCount = useMemo(() => {
     return cartItems.reduce((sum, item) => sum + item.quantity, 0);
