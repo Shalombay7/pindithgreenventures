@@ -2,10 +2,20 @@
   {
     "id": "rabbit-nz-white",
     "name": "New Zealand White Rabbit",
-    "category": "Rabbits",
+    "category": "Rabbit",
     "price": 25.00,
     "description": "A popular breed known for its excellent meat quality and fast growth rate. Ideal for small-scale farming.",
-    "imageUrl": "/images/rabbits/new-zealand-white.jpg"
+    "image": "/images/rabbits/new-zealand-white.jpg",
+    "available": true
+  },
+  {
+    "id": "rabbit-californian",
+    "name": "Californian Rabbit",
+    "category": "Rabbit",
+    "price": 28.00,
+    "description": "Another excellent meat breed, known for its good meat-to-bone ratio and distinctive markings.",
+    "image": "/images/rabbits/californian-rabbit.jpg",
+    "available": true
   },
   {
     "id": "poultry-r-i-red",
@@ -13,6 +23,16 @@
     "category": "Poultry",
     "price": 15.00,
     "description": "A versatile, dual-purpose breed valued for both its egg-laying capabilities and meat. Hardy and reliable.",
-    "imageUrl": "/images/poultry/rhode-island-red.jpg"
+    "image": "/images/poultry/rhode-island-red.jpg",
+    "available": true
+  },
+  {
+    "id": "poultry-broiler",
+    "name": "Broiler Chicken",
+    "category": "Poultry",
+    "price": 12.00,
+    "description": "Specifically bred and raised for meat production. Known for rapid growth and efficiency.",
+    "image": "/images/poultry/broiler-chicken.jpg",
+    "available": false
   }
 ]

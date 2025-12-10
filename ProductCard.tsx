@@ -1,27 +1,22 @@
 import { Link } from 'react-router-dom';
+import { Product } from './types';
 
-type Product = {
-  id: string;
-  name: string;
-  price: number;
-  imageUrl: string;
-  description: string;
-};
-
-type ProductCardProps = {
+interface ProductCardProps {
   product: Product;
-};
+}
 
 export function ProductCard({ product }: ProductCardProps) {
+  const { id, name, image, price, available } = product;
+
   return (
-    <Link to={`/products/${product.id}`} className="group block h-full">
-      <div className="border rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
-        {/* You can add an image here later if you want */}
-        {/* <img src={product.imageUrl} alt={product.name} className="w-full h-48 object-cover rounded-t-lg mb-4" /> */}
-        <div className="flex-grow">
-          <h3 className="text-xl font-semibold mb-2 group-hover:text-pindith-700 transition-colors">{product.name}</h3>
-        </div>
-        <p className="text-lg font-medium text-green-700 mt-2">${product.price.toFixed(2)}</p>
+    <Link to={`/product/${id}`} className="group relative block border rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+      <img src={image} alt={name} className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105" />
+      {!available && (
+        <div className="absolute top-2 right-2 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Out of Stock</div>
+      )}
+      <div className="p-4">
+        <h3 className="font-semibold text-lg text-earth-700 group-hover:text-pindith-700">{name}</h3>
+        <p className="text-pindith-700 mt-1">GHS {price.toFixed(2)}</p>
       </div>
     </Link>
   );
