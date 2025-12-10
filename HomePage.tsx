@@ -13,10 +13,17 @@ export function HomePage() {
     return ['All', ...Array.from(categories)];
   }, [products]);
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredProducts = selectedCategory === 'All'
-    ? products
-    : products.filter(product => product.category === selectedCategory);
+  const filteredProducts = useMemo(() => {
+    return products
+      .filter(product => {
+        return selectedCategory === 'All' || product.category === selectedCategory;
+      })
+      .filter(product => {
+        return product.name.toLowerCase().includes(searchTerm.toLowerCase());
+      });
+  }, [products, selectedCategory, searchTerm]);
   return (
     <div>
       {/* Hero Section */}
@@ -40,8 +47,16 @@ export function HomePage() {
         <h2 className="text-3xl font-bold text-center text-earth-800">Our Products</h2>
 
         {/* Category Filters */}
-        <div className="flex justify-center gap-2 sm:gap-4 my-8">
-          {availableCategories.map(category => (
+        <div className="my-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <input
+            type="text"
+            placeholder="Search products..."
+            value={searchTerm}
+            onChange={e => setSearchTerm(e.target.value)}
+            className="w-full sm:w-64 px-4 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-pindith-500 focus:outline-none"
+          />
+          <div className="flex justify-center gap-2 sm:gap-4 flex-wrap">
+            {availableCategories.map(category => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
@@ -53,7 +68,8 @@ export function HomePage() {
             >
               {category}
             </button>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
