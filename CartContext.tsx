@@ -3,7 +3,7 @@ import React, { createContext, useContext, ReactNode, useMemo, useReducer } from
 type CartItem = {
   name: string;
   price: number;
-  imageUrl: string;
+  image: string;
   quantity: number;
 };
 
