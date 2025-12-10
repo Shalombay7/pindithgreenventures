@@ -9,7 +9,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const { id, name, image, price, available } = product;
 
   return (
-    <Link to={`/product/${id}`} className="group relative block border rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+    <Link to={`/products/${id}`} className="group relative block border rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
       <img src={image} alt={name} className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105" />
       {!available && (
         <div className="absolute top-2 right-2 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Out of Stock</div>

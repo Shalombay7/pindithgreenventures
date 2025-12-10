@@ -6,12 +6,14 @@ import { CartDrawer } from './CartDrawer';
 import { StickyCartBar } from './StickyCartBar';
 import { HomePage } from './HomePage';
 import { ProductDetailPage } from './ProductDetailPage';
+import { ScrollToTop } from './ScrollToTop';
 
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
     <>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Header onCartClick={() => setIsCartOpen(true)} />
         <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
