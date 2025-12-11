@@ -47,7 +47,7 @@ export function ProductDetailPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 pt-24">
       <div className="grid md:grid-cols-2 gap-8">
-        <img src={image} alt={name} className="w-full h-auto object-cover rounded-lg shadow-lg" />
+        <img src={`/images/${image}`} alt={name} className="w-full h-auto object-cover rounded-lg shadow-lg" />
         <div>
           <h1 className="text-3xl font-bold text-earth-800">{name}</h1>
           {available ? (
