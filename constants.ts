@@ -31,7 +31,7 @@ export const PRODUCTS: Product[] = [
     category: PRODUCT_CATEGORIES[1], // 'Poultry'
     price: 3500,
     description: 'Healthy, organically fed broilers. Price per kg live weight. Tender and rich in flavor.',
-    image: 'https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&q=80&w=800',
+    image: '/images/poultry/broiler-chicken.jpg',
     available: true,
   },
   {
@@ -40,7 +40,7 @@ export const PRODUCTS: Product[] = [
     category: PRODUCT_CATEGORIES[1], // 'Poultry'
     price: 4500,
     description: 'Point-of-lay hens raised in free-range environments. High egg production capability.',
-    image: '/images/poultry/WhatsApp Image 2025-12-10 at 05.01.02.jpeg',
+    image: '/images/poultry/rhode-island-red.jpg',
     available: true,
   },
   {
@@ -49,7 +49,7 @@ export const PRODUCTS: Product[] = [
     category: PRODUCT_CATEGORIES[0], // 'Rabbit'
     price: 30000,
     description: 'The gentle giant of the rabbit world. Impressive size and calm nature.',
-    image: '/images/poultry/WhatsApp Image 2025-12-10 at 05.00.57.jpeg',
+    image: '/images/rabbits/giant-flemish.jpeg', // Moved to rabbits folder and renamed for clarity
     available: true,
   },
   {
@@ -58,7 +58,7 @@ export const PRODUCTS: Product[] = [
     category: PRODUCT_CATEGORIES[1], // 'Poultry'
     price: 1800,
     description: 'Fresh, nutrient-dense quail eggs. Great for children and immune boosting.',
-    image: '/images/poultry/WhatsApp Image 2025-12-10 at 05.01.00.jpeg',
+    image: '/images/poultry/quail-eggs.jpg',
     available: true,
   }
 ];
