@@ -27,7 +27,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: '3',
-    name: 'Mature Broilers (Kg)',
+    name: 'Mature Broiler (per Kg)',
     category: PRODUCT_CATEGORIES[1], // 'Poultry'
     price: 3500,
     description: 'Healthy, organically fed broilers. Price per kg live weight. Tender and rich in flavor.',
@@ -54,7 +54,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: '6',
-    name: 'Quail Crate (30 Eggs)',
+    name: 'Crate of Quail Eggs (30)',
     category: PRODUCT_CATEGORIES[1], // 'Poultry'
     price: 1800,
     description: 'Fresh, nutrient-dense quail eggs. Great for children and immune boosting.',
