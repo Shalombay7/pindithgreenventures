@@ -8,6 +8,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '1',
     name: 'Californian Rabbit',
+    slug: 'californian-rabbit',
     category: PRODUCT_CATEGORIES[0], // 'Rabbit'
     price: 15000,
     description: 'Premium breed known for fast growth and excellent meat quality. Perfect for breeding stock.',
@@ -18,6 +19,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '2',
     name: 'Dutch Rabbit Pair',
+    slug: 'dutch-rabbit-pair',
     category: PRODUCT_CATEGORIES[0], // 'Rabbit'
     price: 25000,
     description: 'Distinctive markings and docile temperament. Excellent for pets or small-scale breeding.',
@@ -28,6 +30,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '3',
     name: 'Mature Broiler (per Kg)',
+    slug: 'mature-broiler',
     category: PRODUCT_CATEGORIES[1], // 'Poultry'
     price: 3500,
     description: 'Healthy, organically fed broilers. Price per kg live weight. Tender and rich in flavor.',
@@ -37,6 +40,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '4',
     name: 'Organic Layers',
+    slug: 'organic-layers-rhode-island-red',
     category: PRODUCT_CATEGORIES[1], // 'Poultry'
     price: 4500,
     description: 'Point-of-lay hens raised in free-range environments. High egg production capability.',
@@ -46,6 +50,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '5',
     name: 'Giant Flemish Rabbit',
+    slug: 'giant-flemish-rabbit',
     category: PRODUCT_CATEGORIES[0], // 'Rabbit'
     price: 30000,
     description: 'The gentle giant of the rabbit world. Impressive size and calm nature.',
@@ -55,6 +60,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '6',
     name: 'Crate of Quail Eggs (30)',
+    slug: 'crate-of-quail-eggs',
     category: PRODUCT_CATEGORIES[1], // 'Poultry'
     price: 1800,
     description: 'Fresh, nutrient-dense quail eggs. Great for children and immune boosting.',
