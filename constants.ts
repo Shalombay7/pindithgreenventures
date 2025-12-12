@@ -11,7 +11,8 @@ export const PRODUCTS: Product[] = [
     category: PRODUCT_CATEGORIES[0], // 'Rabbit'
     price: 15000,
     description: 'Premium breed known for fast growth and excellent meat quality. Perfect for breeding stock.',
-    image: 'https://images.unsplash.com/photo-1585110396063-7eb89899c759?auto=format&fit=crop&q=80&w=800',
+    image: '/images/rabbits/new-zealand-white.jpg', // Placeholder image
+    clip: '/images/rabbits/rabbit v1.mp4',
     available: true,
   },
   {
@@ -20,7 +21,8 @@ export const PRODUCTS: Product[] = [
     category: PRODUCT_CATEGORIES[0], // 'Rabbit'
     price: 25000,
     description: 'Distinctive markings and docile temperament. Excellent for pets or small-scale breeding.',
-    image: 'https://images.unsplash.com/photo-1559209172-0ff8f6d49484?auto=format&fit=crop&q=80&w=800',
+    image: '/images/rabbits/dutch-rabbit.jpg', // Placeholder image
+    clip: '/images/rabbits/rabbit v2.mp4',
     available: false,
   },
   {
@@ -38,7 +40,7 @@ export const PRODUCTS: Product[] = [
     category: PRODUCT_CATEGORIES[1], // 'Poultry'
     price: 4500,
     description: 'Point-of-lay hens raised in free-range environments. High egg production capability.',
-    image: 'https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&q=80&w=800',
+    image: '/images/poultry/WhatsApp Image 2025-12-10 at 05.01.02.jpeg',
     available: true,
   },
   {
@@ -47,7 +49,7 @@ export const PRODUCTS: Product[] = [
     category: PRODUCT_CATEGORIES[0], // 'Rabbit'
     price: 30000,
     description: 'The gentle giant of the rabbit world. Impressive size and calm nature.',
-    image: 'https://images.unsplash.com/photo-1473631165492-49f3e433436d?auto=format&fit=crop&q=80&w=800',
+    image: '/images/poultry/WhatsApp Image 2025-12-10 at 05.00.57.jpeg',
     available: true,
   },
   {
@@ -56,7 +58,7 @@ export const PRODUCTS: Product[] = [
     category: PRODUCT_CATEGORIES[1], // 'Poultry'
     price: 1800,
     description: 'Fresh, nutrient-dense quail eggs. Great for children and immune boosting.',
-    image: 'https://images.unsplash.com/photo-1599307406326-805c87c067d0?auto=format&fit=crop&q=80&w=800',
+    image: '/images/poultry/WhatsApp Image 2025-12-10 at 05.01.00.jpeg',
     available: true,
   }
 ];
