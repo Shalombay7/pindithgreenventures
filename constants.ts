@@ -12,7 +12,7 @@ export const PRODUCTS: Product[] = [
     price: 15000,
     description: 'Premium breed known for fast growth and excellent meat quality. Perfect for breeding stock.',
     image: '/images/rabbits/californian-rabbit.jpg',
-    clip: '/images/rabbits/rabbit v1.mp4',
+    clip: '/images/rabbits/rabbit-v1.mp4',
     available: true,
   },
   {
@@ -21,8 +21,8 @@ export const PRODUCTS: Product[] = [
     category: PRODUCT_CATEGORIES[0], // 'Rabbit'
     price: 25000,
     description: 'Distinctive markings and docile temperament. Excellent for pets or small-scale breeding.',
-    image: '/images/rabbits/dutch-rabbit.jpg', // Placeholder image
-    clip: '/images/rabbits/rabbit v2.mp4',
+    image: '/images/rabbits/dutch-rabbit.jpg',
+    clip: '/images/rabbits/rabbit-v2.mp4',
     available: false,
   },
   {
@@ -49,7 +49,7 @@ export const PRODUCTS: Product[] = [
     category: PRODUCT_CATEGORIES[0], // 'Rabbit'
     price: 30000,
     description: 'The gentle giant of the rabbit world. Impressive size and calm nature.',
-    image: '/images/rabbits/giant-flemish.jpeg', // Moved to rabbits folder and renamed for clarity
+    image: '/images/rabbits/giant-flemish.jpeg',
     available: true,
   },
   {
