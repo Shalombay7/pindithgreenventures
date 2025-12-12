@@ -7,12 +7,12 @@ export const WHATSAPP_NUMBER = "233244777504"; // Updated business number
 export const PRODUCTS: Product[] = [
   {
     id: '1',
-    name: 'Californian Rabbit',
-    slug: 'californian-rabbit',
+    name: 'New Zealand White Rabbit',
+    slug: 'new-zealand-white-rabbit',
     category: PRODUCT_CATEGORIES[0], // 'Rabbit'
     price: 15000,
     description: 'Premium breed known for fast growth and excellent meat quality. Perfect for breeding stock.',
-    image: '/images/rabbits/californian-rabbit.jpg',
+    image: '/images/rabbits/new-zealand-white.jpg',
     clip: '/images/rabbits/rabbit-v1.mp4',
     available: true,
   },
