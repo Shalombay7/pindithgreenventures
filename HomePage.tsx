@@ -43,10 +43,10 @@ export function HomePage() {
         <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-8 items-center">
           <div className="text-center md:text-left">
             <h1 className="text-4xl md:text-5xl font-bold text-earth-800">
-              Premium Rabbits & Signature Rabbit Barbecue
+              Welcome to pindith Green venture
             </h1>
             <p className="mt-4 text-lg text-gray-600">
-              PinDith Green Ventures specializes in healthy, well-raised rabbits and made-to-order rabbit kibab for unforgettable flavor.
+              PinDith Green Ventures supplies healthy rabbits for raising, breeding, and farming, plus made-to-order rabbit kibab for unforgettable flavor.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row md:justify-start justify-center gap-3">
               <a
@@ -55,14 +55,14 @@ export function HomePage() {
                 rel="noreferrer"
                 className="inline-block rounded bg-pindith-600 px-8 py-3 text-lg font-medium text-white shadow hover:bg-pindith-700 transition"
               >
-                Order Rabbit Kibab
-              </a>
-              <a
-                href="#products"
-                className="inline-block rounded border border-pindith-600 bg-white px-8 py-3 text-lg font-medium text-pindith-700 shadow-sm hover:bg-pindith-50 transition"
-              >
-                Browse Rabbits
-              </a>
+              Order Rabbit Kibab
+            </a>
+            <a
+              href="#products"
+              className="inline-block rounded border border-pindith-600 bg-white px-8 py-3 text-lg font-medium text-pindith-700 shadow-sm hover:bg-pindith-50 transition"
+            >
+              Buy Rabbits for Farming
+            </a>
             </div>
             <p className="mt-4 text-sm text-gray-500">
               Freshly prepared, hygienic processing, and delivery options available.
@@ -73,6 +73,102 @@ export function HomePage() {
               src="/images/hero/rabbit-bbq.svg"
               alt="Rabbit barbecue on the grill"
               className="w-full max-w-md rounded-2xl shadow-lg"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Products Section */}
+      <section id="products" className="max-w-6xl mx-auto px-4 py-16">
+        <h2 className="text-3xl font-bold text-center text-earth-800">Rabbit Products</h2>
+        <p className="mt-2 text-center text-sm text-gray-600">
+          Our rabbits are available for raising, breeding, and farming. Other products are available on request.
+        </p>
+
+        {/* Category Filters */}
+        <div className="my-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <input
+            type="text"
+            placeholder="Search rabbits for farming..."
+            value={searchTerm}
+            onChange={e => setSearchTerm(e.target.value)}
+            className="w-full sm:w-64 px-4 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-pindith-500 focus:outline-none"
+          />
+          <div className="flex justify-center gap-2 sm:gap-4 flex-wrap">
+            {availableCategories.map(category => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-4 py-2 text-sm sm:text-base font-medium rounded-full transition-colors duration-200 ${
+                selectedCategory === category
+                  ? 'bg-pindith-600 text-white shadow'
+                  : 'bg-white text-pindith-700 hover:bg-pindith-50 border border-pindith-200'
+              }`}
+            >
+              {category}
+            </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map(product => (
+              <ProductCard key={product.id} product={product} />
+            ))
+          ) : (
+            <p className="col-span-full text-center text-gray-500 py-8">
+              No rabbits found in this category.
+            </p>
+          )}
+        </div>
+
+        <div className="mt-10 flex flex-col items-center gap-3">
+          <p className="text-sm text-gray-600">Need general health guidance?</p>
+          <a
+            href={`${whatsappBase}?text=${consultationMessage}`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded border border-earth-700 bg-earth-800 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-earth-700 transition"
+          >
+            Health Consultation
+          </a>
+        </div>
+      </section>
+
+      {/* Rabbit Gallery */}
+      <section className="mx-auto max-w-6xl px-4 pb-10">
+        <h2 className="text-2xl font-bold text-earth-800 text-center">Rabbit Highlights</h2>
+        <p className="mt-2 text-center text-sm text-gray-600">
+          Breeding stock, farm‑ready rabbits, and our signature barbecue.
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+            <img
+              src="/images/rabbits/new-zealand-white.svg"
+              alt="New Zealand White rabbit"
+              className="h-48 w-full object-cover"
+            />
+          </div>
+          <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+            <img
+              src="/images/rabbits/dutch-rabbit.svg"
+              alt="Dutch rabbit"
+              className="h-48 w-full object-cover"
+            />
+          </div>
+          <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+            <img
+              src="/images/rabbits/giant-flemish.svg"
+              alt="Giant Flemish rabbit"
+              className="h-48 w-full object-cover"
+            />
+          </div>
+          <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+            <img
+              src="/images/hero/rabbit-bbq.svg"
+              alt="Rabbit barbecue"
+              className="h-48 w-full object-cover"
             />
           </div>
         </div>
@@ -161,64 +257,6 @@ export function HomePage() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Products Section */}
-      <section id="products" className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center text-earth-800">Rabbit Products</h2>
-        <p className="mt-2 text-center text-sm text-gray-600">
-          Our rabbit selection is the main focus. Other products are available on request.
-        </p>
-
-        {/* Category Filters */}
-        <div className="my-8 flex flex-col sm:flex-row justify-center items-center gap-4">
-          <input
-            type="text"
-            placeholder="Search rabbits..."
-            value={searchTerm}
-            onChange={e => setSearchTerm(e.target.value)}
-            className="w-full sm:w-64 px-4 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-pindith-500 focus:outline-none"
-          />
-          <div className="flex justify-center gap-2 sm:gap-4 flex-wrap">
-            {availableCategories.map(category => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 text-sm sm:text-base font-medium rounded-full transition-colors duration-200 ${
-                selectedCategory === category
-                  ? 'bg-pindith-600 text-white shadow'
-                  : 'bg-white text-pindith-700 hover:bg-pindith-50 border border-pindith-200'
-              }`}
-            >
-              {category}
-            </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredProducts.length > 0 ? (
-            filteredProducts.map(product => (
-              <ProductCard key={product.id} product={product} />
-            ))
-          ) : (
-            <p className="col-span-full text-center text-gray-500 py-8">
-              No rabbits found in this category.
-            </p>
-          )}
-        </div>
-
-        <div className="mt-10 flex flex-col items-center gap-3">
-          <p className="text-sm text-gray-600">Need health guidance for your rabbits?</p>
-          <a
-            href={`${whatsappBase}?text=${consultationMessage}`}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center justify-center rounded border border-earth-700 bg-earth-800 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-earth-700 transition"
-          >
-            Health Consultation
-          </a>
         </div>
       </section>
 
