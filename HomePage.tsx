@@ -43,7 +43,7 @@ export function HomePage() {
         <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-8 items-center">
           <div className="text-center md:text-left">
             <h1 className="text-4xl md:text-5xl font-bold text-earth-800">
-              Welcome to Pindith Green Venture
+              Welcome to Pindith Green Ventures
             </h1>
             <p className="mt-4 text-lg text-gray-600">
               PinDith Green Ventures supplies healthy rabbits for raising, breeding, and farming, plus made-to-order rabbit kibab for unforgettable flavor.
@@ -70,7 +70,7 @@ export function HomePage() {
           </div>
           <div className="flex justify-center md:justify-end">
             <img
-              src="https://images.unsplash.com/photo-foq4hnXTSPE?auto=format&fit=crop&w=1400&q=80"
+              src="/images/hero/rabbit-bbq.jpg"
               alt="Barbecue skewers on the grill"
               className="w-full max-w-md rounded-2xl shadow-lg"
             />
@@ -124,14 +124,16 @@ export function HomePage() {
         </div>
 
         <div className="mt-10 flex flex-col items-center gap-3">
-          <p className="text-sm text-gray-600">Need general health guidance?</p>
+          <p className="text-sm text-gray-600">
+            Need general health guidance? Feel at home to confide in PinDith Green Ventures.
+          </p>
           <a
             href={`${whatsappBase}?text=${consultationMessage}`}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center rounded border border-earth-700 bg-earth-800 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-earth-700 transition"
           >
-            Health Consultation
+            Free Health Consultation
           </a>
         </div>
       </section>
@@ -145,28 +147,28 @@ export function HomePage() {
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
             <img
-              src="https://images.unsplash.com/photo-kCq6Jp86Zxg?auto=format&fit=crop&w=1200&q=80"
-              alt="Rabbit in grass"
+              src="/images/rabbits/new-zealand-white.jpg"
+              alt="White rabbit"
               className="h-48 w-full object-cover"
             />
           </div>
           <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
             <img
-              src="https://images.unsplash.com/photo-4MqLz3O84q4?auto=format&fit=crop&w=1200&q=80"
+              src="/images/rabbits/dutch-rabbit.jpg"
               alt="Dutch rabbit"
               className="h-48 w-full object-cover"
             />
           </div>
           <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
             <img
-              src="https://images.unsplash.com/photo-iQSz4u-U7U0?auto=format&fit=crop&w=1200&q=80"
-              alt="Rabbit in grassy field"
+              src="/images/rabbits/giant-flemish.jpg"
+              alt="Brown rabbit"
               className="h-48 w-full object-cover"
             />
           </div>
           <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
             <img
-              src="https://images.unsplash.com/photo-foq4hnXTSPE?auto=format&fit=crop&w=1200&q=80"
+              src="/images/hero/rabbit-bbq.jpg"
               alt="Grilled skewers barbecue"
               className="h-48 w-full object-cover"
             />
