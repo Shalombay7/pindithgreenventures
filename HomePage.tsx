@@ -2,9 +2,17 @@ import { useState, useMemo } from 'react';
 import productsData from './products.json';
 import { ProductCard } from './ProductCard';
 import { Product } from './types';
+import { WHATSAPP_NUMBER } from './constants';
 
 export function HomePage() {
   const products = productsData as Product[];
+  const whatsappBase = `https://wa.me/${WHATSAPP_NUMBER}`;
+  const kibabMessage = encodeURIComponent(
+    "Hello PinDith Green Ventures, I'd like to order rabbit kibab. Please share pricing and next steps."
+  );
+  const consultationMessage = encodeURIComponent(
+    "Hello PinDith Green Ventures, I'd like a health consultation. Please let me know the next steps."
+  );
 
   // Dynamically generate categories from the product data for filtering.
   // This is more robust than using a hardcoded list.
@@ -34,12 +42,30 @@ export function HomePage() {
         <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
           Your trusted source for premium rabbits and poultry. We are dedicated to sustainable and ethical farming practices.
         </p>
-        <a
-          href="#products"
-          className="mt-8 inline-block rounded bg-pindith-600 px-8 py-3 text-lg font-medium text-white shadow hover:bg-pindith-700 transition"
-        >
-          Browse Our Products
-        </a>
+        <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+          <a
+            href="#products"
+            className="inline-block rounded bg-pindith-600 px-8 py-3 text-lg font-medium text-white shadow hover:bg-pindith-700 transition"
+          >
+            Browse Our Products
+          </a>
+          <a
+            href={`${whatsappBase}?text=${kibabMessage}`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block rounded border border-pindith-600 bg-white px-8 py-3 text-lg font-medium text-pindith-700 shadow-sm hover:bg-pindith-50 transition"
+          >
+            Order Rabbit Kibab
+          </a>
+          <a
+            href={`${whatsappBase}?text=${consultationMessage}`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block rounded border border-earth-700 bg-earth-800 px-8 py-3 text-lg font-medium text-white shadow-sm hover:bg-earth-700 transition"
+          >
+            Health Consultation
+          </a>
+        </div>
       </section>
 
       {/* Products Section */}

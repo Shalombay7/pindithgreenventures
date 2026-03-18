@@ -9,7 +9,20 @@ export function Footer() {
             <img className="h-8 w-auto" src="/logo.svg" alt="PinDith Green Ventures Logo" />
             <span className="font-bold text-white">PinDith Green Ventures</span>
           </a>
-          <p className="text-center text-sm text-gray-400">&copy; {currentYear} PinDith Green Ventures. All rights reserved.</p>
+          <div className="text-center text-sm text-gray-400">
+            <p>&copy; {currentYear} PinDith Green Ventures. All rights reserved.</p>
+            <p>
+              Designed by{' '}
+              <a
+                href="https://wa.me/233542447318"
+                target="_blank"
+                rel="noreferrer"
+                className="text-pindith-300 hover:text-pindith-200"
+              >
+                Shalombay7
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
