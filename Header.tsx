@@ -3,7 +3,7 @@ import { useCart } from './CartContext';
 
 const navLinks = [
   { name: 'Home', href: '#' },
-  { name: 'Products', href: '#products' },
+  { name: 'Rabbits', href: '#products' },
   // Add more links here as you add sections, e.g., { name: 'About', href: '#about' }
 ];
 

@@ -14,16 +14,17 @@ export function HomePage() {
     "Hello PinDith Green Ventures, I'd like a health consultation. Please let me know the next steps."
   );
   const generalOrderMessage = encodeURIComponent(
-    "Hello PinDith Green Ventures, I'd like to place an order. Please share pricing and next steps."
+    "Hello PinDith Green Ventures, I'd like to place a rabbit order. Please share pricing and next steps."
   );
 
   // Dynamically generate categories from the product data for filtering.
   // This is more robust than using a hardcoded list.
   const availableCategories = useMemo(() => {
     const categories = new Set(products.map(p => p.category));
-    return ['All', ...Array.from(categories)];
+    const ordered = ['Rabbit', 'All', ...Array.from(categories).filter(c => c !== 'Rabbit')];
+    return ordered;
   }, [products]);
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [selectedCategory, setSelectedCategory] = useState<string>('Rabbit');
   const [searchTerm, setSearchTerm] = useState('');
 
   const filteredProducts = useMemo(() => {
@@ -38,40 +39,43 @@ export function HomePage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="text-center py-20 px-4 bg-gradient-to-b from-pindith-50/50 to-white">
-        <h1 className="text-4xl md:text-5xl font-bold text-earth-800">
-          Quality Livestock from PinDith Green Ventures
-        </h1>
-        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          Your trusted source for premium rabbits and poultry. We are dedicated to sustainable and ethical farming practices.
-        </p>
-        <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
-          <a
-            href="#products"
-            className="inline-block rounded bg-pindith-600 px-8 py-3 text-lg font-medium text-white shadow hover:bg-pindith-700 transition"
-          >
-            Browse Products
-          </a>
-          <a
-            href={`${whatsappBase}?text=${kibabMessage}`}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-block rounded border border-pindith-600 bg-white px-8 py-3 text-lg font-medium text-pindith-700 shadow-sm hover:bg-pindith-50 transition"
-          >
-            Order Rabbit Kibab
-          </a>
-          <a
-            href={`${whatsappBase}?text=${consultationMessage}`}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-block rounded border border-earth-700 bg-earth-800 px-8 py-3 text-lg font-medium text-white shadow-sm hover:bg-earth-700 transition"
-          >
-            Health Consultation
-          </a>
+      <section className="py-16 px-4 bg-gradient-to-b from-pindith-50/50 to-white">
+        <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-8 items-center">
+          <div className="text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl font-bold text-earth-800">
+              Premium Rabbits & Signature Rabbit Barbecue
+            </h1>
+            <p className="mt-4 text-lg text-gray-600">
+              PinDith Green Ventures specializes in healthy, well-raised rabbits and made-to-order rabbit kibab for unforgettable flavor.
+            </p>
+            <div className="mt-6 flex flex-col sm:flex-row md:justify-start justify-center gap-3">
+              <a
+                href={`${whatsappBase}?text=${kibabMessage}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block rounded bg-pindith-600 px-8 py-3 text-lg font-medium text-white shadow hover:bg-pindith-700 transition"
+              >
+                Order Rabbit Kibab
+              </a>
+              <a
+                href="#products"
+                className="inline-block rounded border border-pindith-600 bg-white px-8 py-3 text-lg font-medium text-pindith-700 shadow-sm hover:bg-pindith-50 transition"
+              >
+                Browse Rabbits
+              </a>
+            </div>
+            <p className="mt-4 text-sm text-gray-500">
+              Freshly prepared, hygienic processing, and delivery options available.
+            </p>
+          </div>
+          <div className="flex justify-center md:justify-end">
+            <img
+              src="/images/hero/rabbit-bbq.svg"
+              alt="Rabbit barbecue on the grill"
+              className="w-full max-w-md rounded-2xl shadow-lg"
+            />
+          </div>
         </div>
-        <p className="mt-4 text-sm text-gray-500">
-          Same-day response on WhatsApp. Delivery options available.
-        </p>
       </section>
 
       {/* Social Proof */}
@@ -101,11 +105,11 @@ export function HomePage() {
         <div className="grid md:grid-cols-3 gap-4">
           <div className="rounded-lg border border-emerald-100 bg-emerald-50/60 p-5">
             <h3 className="text-lg font-semibold text-earth-800">Hygienic Processing</h3>
-            <p className="mt-2 text-sm text-gray-700">Clean handling, inspected stock, and careful packaging.</p>
+            <p className="mt-2 text-sm text-gray-700">Clean handling, inspected rabbits, and careful packaging.</p>
           </div>
           <div className="rounded-lg border border-amber-100 bg-amber-50/60 p-5">
             <h3 className="text-lg font-semibold text-earth-800">Transparent Pricing</h3>
-            <p className="mt-2 text-sm text-gray-700">Clear per‑kg and per‑unit pricing shared on WhatsApp.</p>
+            <p className="mt-2 text-sm text-gray-700">Clear rabbit pricing and kibab portions shared on WhatsApp.</p>
           </div>
           <div className="rounded-lg border border-sky-100 bg-sky-50/60 p-5">
             <h3 className="text-lg font-semibold text-earth-800">Delivery Options</h3>
@@ -119,28 +123,59 @@ export function HomePage() {
             rel="noreferrer"
             className="inline-flex items-center justify-center rounded bg-pindith-600 px-6 py-3 text-base font-semibold text-white shadow hover:bg-pindith-700 transition"
           >
-            Chat to Order on WhatsApp
+            Chat to Order Rabbits
           </a>
-          <a
-            href={`${whatsappBase}?text=${consultationMessage}`}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center justify-center rounded border border-earth-700 bg-white px-6 py-3 text-base font-semibold text-earth-800 shadow-sm hover:bg-earth-50 transition"
-          >
-            Ask for Health Advice
-          </a>
+        </div>
+      </section>
+
+      {/* Rabbit Meat Benefits */}
+      <section className="mx-auto max-w-6xl px-4 pb-10">
+        <div className="rounded-2xl border border-pindith-100 bg-white p-6 shadow-sm">
+          <h2 className="text-2xl font-bold text-earth-800">Benefits of Rabbit Meat</h2>
+          <p className="mt-2 text-sm text-gray-600">
+            A clean, lean choice for families and fitness‑minded customers.
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-lg border border-emerald-100 bg-emerald-50/60 p-4">
+              <h3 className="font-semibold text-earth-800">Lean Protein</h3>
+              <p className="mt-2 text-sm text-gray-700">
+                Naturally lean and rich in high‑quality protein.
+              </p>
+            </div>
+            <div className="rounded-lg border border-amber-100 bg-amber-50/60 p-4">
+              <h3 className="font-semibold text-earth-800">Lower Fat</h3>
+              <p className="mt-2 text-sm text-gray-700">
+                Lower fat content compared to many red meats.
+              </p>
+            </div>
+            <div className="rounded-lg border border-sky-100 bg-sky-50/60 p-4">
+              <h3 className="font-semibold text-earth-800">Heart‑Friendly</h3>
+              <p className="mt-2 text-sm text-gray-700">
+                A lighter option that supports a balanced diet.
+              </p>
+            </div>
+            <div className="rounded-lg border border-pindith-100 bg-pindith-50/60 p-4">
+              <h3 className="font-semibold text-earth-800">Delicious Flavor</h3>
+              <p className="mt-2 text-sm text-gray-700">
+                Mild taste that pairs perfectly with barbecue spices.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Products Section */}
       <section id="products" className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center text-earth-800">Our Products</h2>
+        <h2 className="text-3xl font-bold text-center text-earth-800">Rabbit Products</h2>
+        <p className="mt-2 text-center text-sm text-gray-600">
+          Our rabbit selection is the main focus. Other products are available on request.
+        </p>
 
         {/* Category Filters */}
         <div className="my-8 flex flex-col sm:flex-row justify-center items-center gap-4">
           <input
             type="text"
-            placeholder="Search products..."
+            placeholder="Search rabbits..."
             value={searchTerm}
             onChange={e => setSearchTerm(e.target.value)}
             className="w-full sm:w-64 px-4 py-2 border border-gray-300 rounded-full focus:ring-2 focus:ring-pindith-500 focus:outline-none"
@@ -169,9 +204,21 @@ export function HomePage() {
             ))
           ) : (
             <p className="col-span-full text-center text-gray-500 py-8">
-              No products found in this category.
+              No rabbits found in this category.
             </p>
           )}
+        </div>
+
+        <div className="mt-10 flex flex-col items-center gap-3">
+          <p className="text-sm text-gray-600">Need health guidance for your rabbits?</p>
+          <a
+            href={`${whatsappBase}?text=${consultationMessage}`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded border border-earth-700 bg-earth-800 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-earth-700 transition"
+          >
+            Health Consultation
+          </a>
         </div>
       </section>
 
@@ -192,9 +239,9 @@ export function HomePage() {
             </p>
           </div>
           <div className="rounded-lg border border-gray-200 p-5">
-            <h3 className="font-semibold text-earth-800">Is the livestock healthy?</h3>
+            <h3 className="font-semibold text-earth-800">Are the rabbits healthy?</h3>
             <p className="mt-2 text-sm text-gray-700">
-              We prioritize hygienic care and healthy stock, with guidance available on request.
+              We prioritize hygienic care and healthy rabbits, with guidance available on request.
             </p>
           </div>
           <div className="rounded-lg border border-gray-200 p-5">
@@ -209,12 +256,12 @@ export function HomePage() {
       {/* Mobile Sticky CTA */}
       <div className="fixed bottom-4 left-1/2 z-40 w-[92%] -translate-x-1/2 sm:hidden">
         <a
-          href={`${whatsappBase}?text=${generalOrderMessage}`}
+          href={`${whatsappBase}?text=${kibabMessage}`}
           target="_blank"
           rel="noreferrer"
           className="flex w-full items-center justify-center rounded-full bg-pindith-600 px-6 py-3 text-base font-semibold text-white shadow-lg hover:bg-pindith-700 transition"
         >
-          Order on WhatsApp
+          Order Rabbit Kibab
         </a>
       </div>
     </div>
