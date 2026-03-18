@@ -43,7 +43,7 @@ export function HomePage() {
         <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-8 items-center">
           <div className="text-center md:text-left">
             <h1 className="text-4xl md:text-5xl font-bold text-earth-800">
-              Welcome to pindith Green venture
+              Welcome to Pindith Green Venture
             </h1>
             <p className="mt-4 text-lg text-gray-600">
               PinDith Green Ventures supplies healthy rabbits for raising, breeding, and farming, plus made-to-order rabbit kibab for unforgettable flavor.
@@ -70,8 +70,8 @@ export function HomePage() {
           </div>
           <div className="flex justify-center md:justify-end">
             <img
-              src="/images/hero/rabbit-bbq.svg"
-              alt="Rabbit barbecue on the grill"
+              src="https://images.unsplash.com/photo-foq4hnXTSPE?auto=format&fit=crop&w=1400&q=80"
+              alt="Barbecue skewers on the grill"
               className="w-full max-w-md rounded-2xl shadow-lg"
             />
           </div>
@@ -145,29 +145,29 @@ export function HomePage() {
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
             <img
-              src="/images/rabbits/new-zealand-white.svg"
-              alt="New Zealand White rabbit"
+              src="https://images.unsplash.com/photo-kCq6Jp86Zxg?auto=format&fit=crop&w=1200&q=80"
+              alt="Rabbit in grass"
               className="h-48 w-full object-cover"
             />
           </div>
           <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
             <img
-              src="/images/rabbits/dutch-rabbit.svg"
+              src="https://images.unsplash.com/photo-4MqLz3O84q4?auto=format&fit=crop&w=1200&q=80"
               alt="Dutch rabbit"
               className="h-48 w-full object-cover"
             />
           </div>
           <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
             <img
-              src="/images/rabbits/giant-flemish.svg"
-              alt="Giant Flemish rabbit"
+              src="https://images.unsplash.com/photo-iQSz4u-U7U0?auto=format&fit=crop&w=1200&q=80"
+              alt="Rabbit in grassy field"
               className="h-48 w-full object-cover"
             />
           </div>
           <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
             <img
-              src="/images/hero/rabbit-bbq.svg"
-              alt="Rabbit barbecue"
+              src="https://images.unsplash.com/photo-foq4hnXTSPE?auto=format&fit=crop&w=1200&q=80"
+              alt="Grilled skewers barbecue"
               className="h-48 w-full object-cover"
             />
           </div>
