@@ -7,8 +7,8 @@ import { WHATSAPP_NUMBER } from './constants';
 export function HomePage() {
   const products = productsData as Product[];
   const whatsappBase = `https://wa.me/${WHATSAPP_NUMBER}`;
-  const kibabMessage = encodeURIComponent(
-    "Hello PinDith Green Ventures, I'd like to order rabbit kibab. Please share pricing and next steps."
+  const kebabMessage = encodeURIComponent(
+    "Hello PinDith Green Ventures, I'd like to order rabbit kebab. Please share pricing and next steps."
   );
   const consultationMessage = encodeURIComponent(
     "Hello PinDith Green Ventures, I'd like a health consultation. Please let me know the next steps."
@@ -46,16 +46,16 @@ export function HomePage() {
               Welcome to Pindith Green Ventures
             </h1>
             <p className="mt-4 text-lg text-gray-600">
-              PinDith Green Ventures supplies healthy rabbits for raising, breeding, and farming, plus made-to-order rabbit kibab for unforgettable flavor.
+              PinDith Green Ventures supplies healthy rabbits for raising, breeding, and farming, plus made-to-order rabbit kebab for unforgettable flavor.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row md:justify-start justify-center gap-3">
               <a
-                href={`${whatsappBase}?text=${kibabMessage}`}
+                href={`${whatsappBase}?text=${kebabMessage}`}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-block rounded bg-pindith-600 px-8 py-3 text-lg font-medium text-white shadow hover:bg-pindith-700 transition"
               >
-              Order Rabbit Kibab
+              Order Rabbit Kebab
             </a>
             <a
               href="#products"
@@ -207,7 +207,7 @@ export function HomePage() {
           </div>
           <div className="rounded-lg border border-amber-100 bg-amber-50/60 p-5">
             <h3 className="text-lg font-semibold text-earth-800">Transparent Pricing</h3>
-            <p className="mt-2 text-sm text-gray-700">Clear rabbit pricing and kibab portions shared on WhatsApp.</p>
+            <p className="mt-2 text-sm text-gray-700">Clear rabbit pricing and kebab portions shared on WhatsApp.</p>
           </div>
           <div className="rounded-lg border border-sky-100 bg-sky-50/60 p-5">
             <h3 className="text-lg font-semibold text-earth-800">Delivery Options</h3>
@@ -296,12 +296,12 @@ export function HomePage() {
       {/* Mobile Sticky CTA */}
       <div className="fixed bottom-4 left-1/2 z-40 w-[92%] -translate-x-1/2 sm:hidden">
         <a
-          href={`${whatsappBase}?text=${kibabMessage}`}
+          href={`${whatsappBase}?text=${kebabMessage}`}
           target="_blank"
           rel="noreferrer"
           className="flex w-full items-center justify-center rounded-full bg-pindith-600 px-6 py-3 text-base font-semibold text-white shadow-lg hover:bg-pindith-700 transition"
         >
-          Order Rabbit Kibab
+          Order Rabbit Kebab
         </a>
       </div>
     </div>
