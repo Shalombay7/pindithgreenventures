@@ -13,6 +13,9 @@ export function HomePage() {
   const consultationMessage = encodeURIComponent(
     "Hello PinDith Green Ventures, I'd like a health consultation. Please let me know the next steps."
   );
+  const generalOrderMessage = encodeURIComponent(
+    "Hello PinDith Green Ventures, I'd like to place an order. Please share pricing and next steps."
+  );
 
   // Dynamically generate categories from the product data for filtering.
   // This is more robust than using a hardcoded list.
@@ -47,7 +50,7 @@ export function HomePage() {
             href="#products"
             className="inline-block rounded bg-pindith-600 px-8 py-3 text-lg font-medium text-white shadow hover:bg-pindith-700 transition"
           >
-            Browse Our Products
+            Browse Products
           </a>
           <a
             href={`${whatsappBase}?text=${kibabMessage}`}
@@ -64,6 +67,67 @@ export function HomePage() {
             className="inline-block rounded border border-earth-700 bg-earth-800 px-8 py-3 text-lg font-medium text-white shadow-sm hover:bg-earth-700 transition"
           >
             Health Consultation
+          </a>
+        </div>
+        <p className="mt-4 text-sm text-gray-500">
+          Same-day response on WhatsApp. Delivery options available.
+        </p>
+      </section>
+
+      {/* Social Proof */}
+      <section className="mx-auto max-w-6xl px-4 py-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="rounded-lg bg-white shadow-sm border border-pindith-100 p-4 text-center">
+            <p className="text-2xl font-bold text-earth-800">250+</p>
+            <p className="text-sm text-gray-600">Happy Customers</p>
+          </div>
+          <div className="rounded-lg bg-white shadow-sm border border-pindith-100 p-4 text-center">
+            <p className="text-2xl font-bold text-earth-800">4.8★</p>
+            <p className="text-sm text-gray-600">Customer Rating</p>
+          </div>
+          <div className="rounded-lg bg-white shadow-sm border border-pindith-100 p-4 text-center">
+            <p className="text-2xl font-bold text-earth-800">24/7</p>
+            <p className="text-sm text-gray-600">Response Time</p>
+          </div>
+          <div className="rounded-lg bg-white shadow-sm border border-pindith-100 p-4 text-center">
+            <p className="text-2xl font-bold text-earth-800">Nationwide</p>
+            <p className="text-sm text-gray-600">Delivery Coverage</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust & Convenience */}
+      <section className="mx-auto max-w-6xl px-4 pb-8">
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="rounded-lg border border-emerald-100 bg-emerald-50/60 p-5">
+            <h3 className="text-lg font-semibold text-earth-800">Hygienic Processing</h3>
+            <p className="mt-2 text-sm text-gray-700">Clean handling, inspected stock, and careful packaging.</p>
+          </div>
+          <div className="rounded-lg border border-amber-100 bg-amber-50/60 p-5">
+            <h3 className="text-lg font-semibold text-earth-800">Transparent Pricing</h3>
+            <p className="mt-2 text-sm text-gray-700">Clear per‑kg and per‑unit pricing shared on WhatsApp.</p>
+          </div>
+          <div className="rounded-lg border border-sky-100 bg-sky-50/60 p-5">
+            <h3 className="text-lg font-semibold text-earth-800">Delivery Options</h3>
+            <p className="mt-2 text-sm text-gray-700">Choose pickup or delivery based on your location.</p>
+          </div>
+        </div>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a
+            href={`${whatsappBase}?text=${generalOrderMessage}`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded bg-pindith-600 px-6 py-3 text-base font-semibold text-white shadow hover:bg-pindith-700 transition"
+          >
+            Chat to Order on WhatsApp
+          </a>
+          <a
+            href={`${whatsappBase}?text=${consultationMessage}`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded border border-earth-700 bg-white px-6 py-3 text-base font-semibold text-earth-800 shadow-sm hover:bg-earth-50 transition"
+          >
+            Ask for Health Advice
           </a>
         </div>
       </section>
@@ -110,6 +174,49 @@ export function HomePage() {
           )}
         </div>
       </section>
+
+      {/* FAQ */}
+      <section className="mx-auto max-w-6xl px-4 pb-16">
+        <h2 className="text-2xl font-bold text-earth-800 mb-6 text-center">Quick Answers</h2>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="rounded-lg border border-gray-200 p-5">
+            <h3 className="font-semibold text-earth-800">How do I place an order?</h3>
+            <p className="mt-2 text-sm text-gray-700">
+              Click any WhatsApp button, send your request, and we’ll confirm price, quantity, and delivery.
+            </p>
+          </div>
+          <div className="rounded-lg border border-gray-200 p-5">
+            <h3 className="font-semibold text-earth-800">Do you offer delivery?</h3>
+            <p className="mt-2 text-sm text-gray-700">
+              Yes. We offer pickup and delivery options depending on your location.
+            </p>
+          </div>
+          <div className="rounded-lg border border-gray-200 p-5">
+            <h3 className="font-semibold text-earth-800">Is the livestock healthy?</h3>
+            <p className="mt-2 text-sm text-gray-700">
+              We prioritize hygienic care and healthy stock, with guidance available on request.
+            </p>
+          </div>
+          <div className="rounded-lg border border-gray-200 p-5">
+            <h3 className="font-semibold text-earth-800">Can I request a custom order?</h3>
+            <p className="mt-2 text-sm text-gray-700">
+              Absolutely. Share your needs on WhatsApp and we’ll guide you.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile Sticky CTA */}
+      <div className="fixed bottom-4 left-1/2 z-40 w-[92%] -translate-x-1/2 sm:hidden">
+        <a
+          href={`${whatsappBase}?text=${generalOrderMessage}`}
+          target="_blank"
+          rel="noreferrer"
+          className="flex w-full items-center justify-center rounded-full bg-pindith-600 px-6 py-3 text-base font-semibold text-white shadow-lg hover:bg-pindith-700 transition"
+        >
+          Order on WhatsApp
+        </a>
+      </div>
     </div>
   );
 }
