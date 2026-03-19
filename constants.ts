@@ -37,5 +37,5 @@ export const PRODUCTS: Product[] = [
     image: '/images/rabbits/giant-flemish.jpg',
     available: true,
   },
-  }
+  
 ];
