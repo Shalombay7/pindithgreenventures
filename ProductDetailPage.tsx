@@ -3,6 +3,7 @@ import productsData from './products.json';
 import { useCart } from './CartContext';
 import { Product } from './types';
 import { ProductCard } from './ProductCard';
+import { WHATSAPP_NUMBER } from './constants';
 
 export function ProductDetailPage() {
   const { productId } = useParams();
@@ -35,7 +36,7 @@ export function ProductDetailPage() {
     message += `- ${name} - GHS ${price.toFixed(2)}\n\n`;
     message += `Please let me know the next steps.`;
 
-    const whatsappUrl = `https://wa.me/233244123456?text=${encodeURIComponent(message)}`; // Replace with your number
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 

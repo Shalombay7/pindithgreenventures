@@ -82,7 +82,7 @@ export function HomePage() {
       <section id="products" className="max-w-6xl mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold text-center text-earth-800">Rabbit Products</h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          Our rabbits are available for raising, breeding, and farming. Other products are available on request.
+          Our rabbits are available for raising, breeding, and farming.
         </p>
 
         {/* Category Filters */}
@@ -135,6 +135,63 @@ export function HomePage() {
           >
             Free Health Consultation
           </a>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="mx-auto max-w-6xl px-4 pb-12">
+        <h2 className="text-2xl font-bold text-earth-800 text-center">How It Works</h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+            <p className="text-sm font-semibold text-pindith-700">1. Choose</p>
+            <h3 className="mt-2 font-semibold text-earth-800">Select rabbits or kebab</h3>
+            <p className="mt-2 text-sm text-gray-700">Browse the rabbits and send your request on WhatsApp.</p>
+          </div>
+          <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+            <p className="text-sm font-semibold text-pindith-700">2. Confirm</p>
+            <h3 className="mt-2 font-semibold text-earth-800">Get price & delivery</h3>
+            <p className="mt-2 text-sm text-gray-700">We confirm pricing per head or per kg and delivery options.</p>
+          </div>
+          <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+            <p className="text-sm font-semibold text-pindith-700">3. Receive</p>
+            <h3 className="mt-2 font-semibold text-earth-800">Pick up or deliver</h3>
+            <p className="mt-2 text-sm text-gray-700">Choose pickup or delivery anywhere nationwide.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="mx-auto max-w-6xl px-4 pb-12">
+        <h2 className="text-2xl font-bold text-earth-800 text-center">What Customers Say</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+            <p className="text-sm text-gray-700">
+              “Fast response and healthy rabbits. The packaging was excellent.”
+            </p>
+            <p className="mt-3 text-sm font-semibold text-earth-800">— Nana K.</p>
+          </div>
+          <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+            <p className="text-sm text-gray-700">
+              “The rabbit kebab was fresh and flavorful. I’m ordering again.”
+            </p>
+            <p className="mt-3 text-sm font-semibold text-earth-800">— Ama A.</p>
+          </div>
+          <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+            <p className="text-sm text-gray-700">
+              “Great advice for starting my rabbit farm. Very helpful.”
+            </p>
+            <p className="mt-3 text-sm font-semibold text-earth-800">— Kojo S.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Delivery Promise */}
+      <section className="mx-auto max-w-6xl px-4 pb-12">
+        <div className="rounded-2xl border border-pindith-100 bg-pindith-50/60 p-6 text-center">
+          <h2 className="text-xl font-bold text-earth-800">Delivery Promise</h2>
+          <p className="mt-2 text-sm text-gray-700">
+            Same‑day response on WhatsApp. Nationwide delivery available. We confirm timing based on your location.
+          </p>
         </div>
       </section>
 

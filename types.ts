@@ -1,4 +1,4 @@
-export const PRODUCT_CATEGORIES = ['Rabbit', 'Poultry', 'Other'] as const;
+export const PRODUCT_CATEGORIES = ['Rabbit'] as const;
 
 export interface Product {
   id: string;

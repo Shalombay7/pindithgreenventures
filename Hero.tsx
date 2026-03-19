@@ -14,7 +14,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-4 max-w-lg text-white/90 sm:text-xl sm:leading-relaxed">
-            Your trusted source for premium quality rabbits and poultry, raised with care and passion.
+            Your trusted source for premium quality rabbits, raised with care and passion.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4 text-center">

@@ -2,7 +2,7 @@ import { Product, PRODUCT_CATEGORIES } from './types';
 
 // Using a placeholder video that evokes nature/farming vibes
 export const HERO_VIDEO_URL = "https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38af135c6663d1597&profile_id=165&oauth2_token_id=57447761";
-export const WHATSAPP_NUMBER = "233244777504"; // Updated business number
+export const WHATSAPP_NUMBER = "204520055"; // Updated business number
 
 export const PRODUCTS: Product[] = [
   {
@@ -28,26 +28,6 @@ export const PRODUCTS: Product[] = [
     available: false,
   },
   {
-    id: '3',
-    name: 'Mature Broiler (per Kg)',
-    slug: 'mature-broiler',
-    category: PRODUCT_CATEGORIES[1], // 'Poultry'
-    price: 80,
-    description: 'Healthy, organically fed broilers. Price per kg live weight. Tender and rich in flavor.',
-    image: '/images/poultry/broiler-chicken.jpg',
-    available: true,
-  },
-  {
-    id: '4',
-    name: 'Organic Layers',
-    slug: 'organic-layers-rhode-island-red',
-    category: PRODUCT_CATEGORIES[1], // 'Poultry'
-    price: 250,
-    description: 'Point-of-lay hens raised in free-range environments. High egg production capability.',
-    image: '/images/poultry/rhode-island-red.jpg',
-    available: true,
-  },
-  {
     id: '5',
     name: 'Giant Flemish Rabbit',
     slug: 'giant-flemish-rabbit',
@@ -57,14 +37,5 @@ export const PRODUCTS: Product[] = [
     image: '/images/rabbits/giant-flemish.jpg',
     available: true,
   },
-  {
-    id: '6',
-    name: 'Crate of Quail Eggs (30)',
-    slug: 'crate-of-quail-eggs',
-    category: PRODUCT_CATEGORIES[1], // 'Poultry'
-    price: 250,
-    description: 'Fresh, nutrient-dense quail eggs. Great for children and immune boosting.',
-    image: '/images/poultry/quail-eggs.jpg',
-    available: true,
   }
 ];

@@ -7,7 +7,7 @@ import { Button } from './Button';
 export const AIAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'model', text: "Hello! I'm the Pindith Assistant. Ask me about rabbit care, poultry farming tips, or recipe ideas!" }
+    { role: 'model', text: "Hello! I'm the Pindith Assistant. Ask me about rabbit care, rabbit farming tips, or recipe ideas!" }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);

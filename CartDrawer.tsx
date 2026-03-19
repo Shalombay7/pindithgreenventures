@@ -1,6 +1,7 @@
 import { useCart } from './CartContext';
 import { useState } from 'react';
 import { Trash2 } from 'lucide-react'; // A popular icon library, you may need to install `lucide-react`
+import { WHATSAPP_NUMBER } from './constants';
 
 type CartDrawerProps = {
   isOpen: boolean;
@@ -35,7 +36,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
     });
 
     message += `\n*Total: GHS ${totalPrice.toFixed(2)}*`;
-    const whatsappUrl = `https://wa.me/233244123456?text=${encodeURIComponent(message)}`; // Replace with your Ghana WhatsApp number
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     clearCart();
     handleClose();
@@ -60,7 +61,10 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
       >
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between p-6 border-b">
-            <h2 className="text-2xl font-bold text-earth-800">Your Order</h2>
+            <div className="flex items-center gap-2">
+              <img src="/logo.svg" alt="PinDith Green Ventures Logo" className="h-8 w-8" />
+              <h2 className="text-2xl font-bold text-earth-800">Your Order</h2>
+            </div>
             <button onClick={handleClose} className="text-gray-500 hover:text-gray-800 text-2xl font-light">&times;</button>
           </div>
 
@@ -80,7 +84,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                   <>
                     {cartItems.map(item => (
                       <div key={item.name} className="flex items-start gap-4">
-                        <img src={item.imageUrl} alt={item.name} className="w-16 h-16 rounded object-cover" />
+                        <img src={item.image} alt={item.name} className="w-16 h-16 rounded object-cover" />
                         <div className="flex-grow">
                           <p className="font-bold text-earth-800">{item.name}</p>
                           <p className="text-sm text-pindith-700">GHS {item.price.toFixed(2)}</p>

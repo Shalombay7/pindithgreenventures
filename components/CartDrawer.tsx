@@ -74,7 +74,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             <div className="h-full flex flex-col items-center justify-center text-center p-8 text-gray-400">
               <ShoppingBag className="w-16 h-16 mb-4 text-gray-200" />
               <p className="text-lg font-medium text-gray-600">Your cart is empty</p>
-              <p className="text-sm">Add some healthy rabbits or poultry to get started!</p>
+              <p className="text-sm">Add some healthy rabbits to get started!</p>
               <Button variant="outline" className="mt-6" onClick={onClose}>
                 Browse Products
               </Button>

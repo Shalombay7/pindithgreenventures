@@ -4,7 +4,7 @@ import { Share2, Facebook, Twitter, Linkedin, Link2, Check } from 'lucide-react'
 export const ShareWidget: React.FC = () => {
   const [copied, setCopied] = useState(false);
   const url = window.location.href;
-  const title = "Check out PinDith Green Ventures for premium rabbits and poultry!";
+  const title = "Check out PinDith Green Ventures for premium rabbits!";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(url);
